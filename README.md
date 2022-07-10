@@ -1,164 +1,455 @@
-# Jekyll GitBook
+## jekyll-theme-H2O
 
-Make Jelly site have a GitBook look!
+基于Jekyll的博客主题模板，简洁轻量。
 
-## Demo
+另外，还有此主题的[Ghost版本](https://github.com/eastpiger/ghost-theme-H2O) by [eastpiger](https://github.com/eastpiger)
 
-Live demo on Github Pages: [https://sighingnow.github.io/jekyll-gitbook](https://sighingnow.github.io/jekyll-gitbook)
+### Preview
 
-[![Jekyll Themes](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com/jekyll-gitbook/)
+#### [在线预览 Live Demo →](http://liaokeyu.com/)
 
-## Why Jekyll with GitBook
+![](screenshot/jekyll-theme-h2o-realhome.jpg)
 
-GitBook is an amazing frontend style to present and organize contents (such as book chapters
-and blogs) on Web. The typical to deploy GitBook at [Github Pages][1]
-is building HTML files locally and then push to Github repository, usually to the `gh-pages`
-branch. It's quite annoying to repeat such workload and make it hard for people do version
-control via git for when there are generated HTML files to be staged in and out.
+![](screenshot/jekyll-theme-h2o-realm.png)
 
-This theme takes style definition out of generated GitBook site and provided the template
-for Jekyll to rendering markdown documents to HTML, thus the whole site can be deployed
-to [Github Pages][1] without generating and uploading HTML bundle every time when there are
-changes to the original repo.
+如果你喜欢这个博客模板，请在右上角star一下，非常感谢～
 
-## How to Get Started
+If you like this theme or using it, please give a ⭐️ for motivation ;)
 
-This theme can be used just as other [Jekyll themes][1].
+如果想体验手机浏览效果，可以扫一下二维码：
 
-[Fork][3] this repository and add your markdown posts to the `_posts` folder.
+![](screenshot/1494404591.png)
 
-### Deploy Locally with Jekyll Serve
+Using your smartphone to scan the QR Code
 
-This theme can be ran locally using Ruby and Gemfiles.
+### Features 特性
 
-[Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll) - GitHub
+#### CN
 
-## Full-text search
+- 代码高亮
+- 夜间模式
+- Disqus评论系统
+- 粉蓝两种主题色
+- 头图个性化底纹
+- 响应式设计
+- 社交图标
+- SEO标题优化
+- 文章标签索引
+- 博客文章搜索
+- 复制文章内容自动添加版权
 
-The search functionality in jekyll-gitbook theme is powered by the [gitbook-plugin-search-pro][5] plugin and is enabled by default.
+#### EN
 
-[https://sighingnow.github.io/jekyll-gitbook/?q=generated](https://sighingnow.github.io/jekyll-gitbook/?q=generated)
+- Code highlight
+- Night mode
+- Disqus Comment System
+- Theme color: Blue & Pink
+- Hero Patterns
+- Responsive design
+- SNS Icon
+- Title SEO
+- Tags system
+- Search
+- Copyright text on copy event
 
-## Code highlight
+### Usage 快速开始
 
-The code highlight style is configurable the following entry in `_config.yaml`:
+首先你需要安装Jekyll，请查看文档: [快速指南](http://jekyll.com.cn/docs/quickstart/)
 
-```yaml
-syntax_highlighter_style: colorful
+如果你已经安装了Jekyll，请检查版本是否为3.0.x，你可以使用 ```gem update jekyll``` 命令进行升级。
+
+使用 ```gem install jekyll-paginate``` 或 ```sudo gem install jekyll-paginate``` 安装Jekyll的分页插件。
+
+> H2O主题基于Jekyll 3.2.1版本，不同版本之间可能存在部分差异，具体请参考[官方更新文档](https://jekyllrb.com/news/)
+
+点击右上角Fork按钮在你的Github上创建分支，或者```clone```到本地。
+
+``` git clone https://github.com/kaeyleo/jekyll-theme-H2O.git ```
+
+最后，在命令行输入 ```jekyll server``` 开启服务，就能在本地预览主题了。
+
+如果需要部署到线上环境，请参照配置文档的 **开始** 章节进行操作。
+
+### Document 配置文档
+
+#### CN
+
+- 开始
+	- [站点信息](#站点信息)
+	- [写一篇文章](#写一篇文章)
+- 组件
+	- [导航](#导航)
+	- [侧边栏](#侧边栏)
+	- [社交图标](#社交图标)
+	- [个人简介](#个人简介)
+	- [标签](#标签)
+	- [文章搜索](#文章搜索)
+	- [代码高亮](#代码高亮)
+	- [夜间模式](#夜间模式)
+- 个性化
+	- [博客封面、主题皮肤](#主题皮肤)
+	- [头图底纹](#头图底纹)
+- 高级部分
+	- [自定义](#自定义)
+- 集成服务
+	- [Disqus](#disqus)
+	- [Share.js](#sharejs)
+
+#### EN
+
+- Get Started
+	- [Site Settings](#站点信息)
+	- [Write Posts](#写一篇文章)
+- Components
+	- [Navigation Menu](#导航)
+	- [Sidebar](#侧边栏)
+	- [SNS Icons](#社交图标)
+	- [Personal Information](#个人简介)
+	- [Tags](#标签)
+	- [Search](#文章搜索)
+	- [Syntax Highlight](#代码高亮)
+	- [Night Mode](#夜间模式)
+- Style
+	- [Theme Color](#主题皮肤)
+	- [Hero Background Patterns](#头图底纹)
+- Advanced
+	- [Customization](#自定义)
+- Plugins
+	- [Disqus](#Disqus)
+	- [Share.js](#Share.js)
+
+
+You can easily get started by modifying _config.yml
+
+#### 站点信息
+
+你可以通用修改 `_config.yml` 文件来轻松的开始搭建自己的博客
+
+```
+# Site settings
+title: '廖柯宇的独立博客' # 你的博客网站标题
+description: '很高兴能在这里与你分享我对技术和生活的思考。' # 站点描述
+keyword: '廖柯宇, 廖柯宇的独立博客, 前端, 设计' # 网站关键词
+url: 'http://liaokeyu.com' # 站点url
+baseurl: ''
+
+# Build settings
+paginate: 6 # 一页放几篇文章
+paginate_path: 'page:num'
 ```
 
-The default code highlight style is `colorful`, the full supported styles can be found from [the rouge repository][6]. Customized
-style can be added to [./gitbook/rouge/](./gitbook/rouge/).
+其实大部分参数已经默认配置好了，你只需要通过文档了解它们，然后根据自己的需求去`_config.yml`文件里修改即可。
 
-## How to generate TOC
+#### 写一篇文章
 
-The jekyll-gitbook theme leverages [jekyll-toc][4] to generate the *Contents* for the page.
-The TOC feature is not enabled by default. To use the TOC feature, modify the TOC
-configuration in `_config.yml`:
+文章一般都放在`_posts`文件夹里，每篇文章的开头都需要设置一些头信息：
 
-```yaml
-toc:
-    enabled: true
-    h_min: 1
-    h_max: 3
+```
+---
+layout: post
+title: 'H2O theme for Jekyll'
+subtitle: '或许是最漂亮的Jekyll主题'
+date: 2017-04-18
+categories: 技术
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-postcover.jpg'
+tags: jekyll 前端开发 设计
+---
 ```
 
-## Google Analytics, etc.
+#### 导航
 
-The jekyll-gitboook theme supports embedding the [Google Analytics][7], [CNZZ][8] and [Application Insights][9] website analytical tools with the following
-minimal configuration in `_config.yaml`:
+博客顶部的导航栏信息需要以下面的格式进行配置：
 
-```yaml
-tracker:
-  google_analytics: "<YOUR GOOGLE ANALYTICS KEY, e.g, UA-xxxxxx-x>"
+```
+# Navigation links
+nav:
+  home: '/'
+  tags: '/tags.html'
 ```
 
-Similarly, CNZZ can be added with the following configuration in `_config.yaml`
+导航链接需要写上完整的html文件名，它们都是放于根目录下的，如果自建文件夹，请务必在`exclude` 参数中增加自建文件夹的文件名:
 
-```yaml
-tracker:
-  cnzz: "<YOUR CNZZ ANALYTICS KEY, e.g., xxxxxxxx>"
+```
+# Build settings
+exclude: ['node_modules', 'dev', 'package.json', '自定义的文件夹名字']
 ```
 
-Application Insights can be added with the following configuration in `_config.yaml`
+这样做是为了在Jekyll运行时排除某些文件被复制到运行文件`_site`里去。
 
-```yaml
-tracker:
-  application_insights: "<YOUR APPLICATION INSIGHTS CONNECTION STRING>"
+#### 侧边栏
+
+![](screenshot/jekyll-theme-h2o-sideBar.png)
+
+侧边栏分为两个部分：【个人简介】和【推荐标签】。当屏幕宽度小于960px时，侧边栏会被隐藏。
+
+#### 社交图标
+
+使用阿里的图标管理平台Iconfont整理了一套常用的社交图标用于博客的个人简介上，包括微博、知乎、掘金、简书、Github等十三个网站，并且对鼠标悬停时的样式颜色进行了优化。
+
+配置格式如下：
+
+```
+# SNS settings 配置社交网站url
+sns:
+  weibo: '//weibo.com/lovecolcol'
+  juejin: '//juejin.im/user/57a6f434165abd006159b4cc'
+  instagram: '//www.instagram.com/steveliaocn'
+  github: '//github.com/kaeyleo'
 ```
 
-## Extra StyleSheet or Javascript elements
+sns属性可选参数：
 
-You can add extra CSS or JavaScript references using configuration collections:
+社交网站 | 参数
+--------|----
+微博 | `weibo`
+推特 | `twitter`
+Github | `github`
+知乎 | `zhihu`
+掘金 | `juejin`
+豆瓣 | `douban`
+简书 | `jianshu`
+UI中国 | `uicn`
+领英 | `linkedin`
+Facebook | `facebook`
+Youtube | `youtube`
+Instagram | `instagram`
+Dribbble | `dribbble`
+Behance | `behance`
+Medium | `medium`
+VK | `vk`
 
-- extra_css: for additional style sheets. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
-- extra_header_js: for additional scripts to be included in the `<head>` tag, after the `extra_css` has been added. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
-- extra_footer_js: for additional scripts to be included at the end of the HTML document, just before the site tracking script. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
+#### 个人简介
 
-## Customizing font settings
+首页侧边栏和文章页面底部都会显示你的个人简介
 
-The fonts can be customized by modifying the `.book.font-family-0` and `.book.font-family-1` entry in [`./gitbook/custom.css`][10],
-
-```css
-.book.font-family-0 {
-    font-family: Georgia, serif;
-}
-.book.font-family-1 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+```
+# Author 配置博主信息
+author: 'Jack'
+nickname: 'xx'
+bio: '程序员'
+avatar: 'assets/img/avatar.jpg'
 ```
 
-## Tips, Warnings and Dangers blocks
+#### 标签
 
-The jekyll-gitbook theme supports customized kramdown attributes (`{: .block-tip }`, `{: .block-warning }`,
-`{: .block-danger }`) like that displayed in [the discord.js website][11]. The marker can be used like
+对侧边栏的标签模块进行相应配置：
 
-```markdown
-> ##### TIP
->
-> This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have
-> this or a similar version after installation.
-{: .block-tip }
+```
+# Tags
+recommend-tags: true
+recommend-condition-size: 12
+
 ```
 
-Rendered page can be previewed from
+Tags配置说明：
 
-[https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html](https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html)
+ 属性 | 参数 | 描述
+-----|-----|-------
+`recommend-tags` | `true`, `false` | 是否显示推荐标签
+`recommend-condition-size` | `12` 或其他数字 | 推荐标签个数限制
 
-## Cover image inside pages
+#### 文章搜索
 
-The jekyll-gitbook theme supports adding a cover image to a specific page by adding
-a `cover` field to the page metadata:
+![](screenshot/jekyll-theme-h2o-search.png)
 
-```diff
-  ---
-  title: Page with cover image
-  author: Tao He
-  date: 2022-05-24
-  category: Jekyll
-  layout: post
-+ cover: /jekyll-gitbook/dinosaur.gif
-  ---
+基于Jekyll服务器生成文章索引文件 `search.json` 为博客提供搜索服务。输入文章标题或与文章标签相关的关键字即可。
+
+搜索功能默认是开启的，以卡片的样式显示在侧边栏底部。如需关闭请将配置文件 `_config.yml` 中 `search ` 属性的值改为 `false` 。
+
+```
+# Search
+search: true
 ```
 
-The effect can be previewed from
+说明 | 参数
+----|-----
+开启搜索功能 | `true`
+关闭搜索功能 | `false`
 
-[https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-05-24-page_cover.html](https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-05-24-page_cover.html)
+#### 代码高亮
 
-## License
+模板引入了[Prism.js](http://prismjs.com)，一款轻量、可扩展的代码语法高亮库。
 
-This work is open sourced under the Apache License, Version 2.0.
+很多知名网站如[MDN](https://developer.mozilla.org/)、[css-tricks](https://css-tricks.com/)也在用它，就连 JavaScript 之父 [Brendan Eich](https://brendaneich.com/) 也在个人博客上使用。
 
-Copyright 2019 Tao He.
+![代码高亮](http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-highlight.png)
 
-[1]: https://pages.github.com
-[2]: https://pages.github.com/themes
-[3]: https://github.com/sighingnow/jekyll-gitbook/fork
-[4]: https://github.com/allejo/jekyll-toc
-[5]: https://github.com/gitbook-plugins/gitbook-plugin-search-pro
-[6]: https://github.com/rouge-ruby/rouge/tree/master/lib/rouge/themes
-[7]: https://analytics.google.com/analytics/web/
-[8]: https://www.cnzz.com/
-[9]: https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-[10]: https://github.com/sighingnow/jekyll-gitbook/blob/master/gitbook/custom.css
-[11]: https://discordjs.guide/popular-topics/canvas.html#setting-up-napi-rs-canvas
+遵循 [HTML5](https://www.w3.org/TR/html5/grouping-content.html#the-pre-element) 标准，Prism 使用语义化的 `<pre>` 元素和 `<code>` 元素来标记代码区块：
+
+```
+<pre><code class="language-css">p { color: red }</code></pre>
+```
+
+在Markdown中你可以这样写：
+
+
+	 ```css
+		p { color: red }
+	 ```
+
+支持语言：
+
+- HTML
+- CSS
+- Sass
+- JavaScript
+- CoffeeScript
+- Java
+- C-like
+- Swift
+- PHP
+- Go
+- Python
+
+#### 夜间模式
+
+晚11点至次日凌晨6点自动开启夜间模式。如果不需要，则将配置文件 `_config.yml` 中 `nightMode ` 属性的值改为 `false` 即可。
+
+```
+# Night mode
+nightMode: true
+```
+
+说明 | 参数
+----|-----
+开启夜间模式 | `true`
+关闭夜间模式 | `false`
+
+#### 主题皮肤
+
+![](screenshot/jekyll-theme-h2o-themecolor.jpg)
+
+支持两种主题颜色蓝色（默认）和粉色
+
+主要效果体现在首页博客封面、顶部导航栏的logo以及鼠标悬停时文字显示的颜色效果。
+
+```
+# theme color
+theme-color: 'default' # pink or default
+```
+
+颜色 | 参数
+----|-----
+蓝色 | `default`
+粉色 | `pink`
+
+如果你希望在博客封面显示图片，需要去index.html文件中的头信息中添加 `header-img` 配置：
+
+```
+---
+layout: default
+home-title: Steven的博客
+description: 开发者，创造者
+header-img: assets/img/banner.jpg
+---
+```
+
+#### 头图底纹
+
+![](screenshot/jekyll-theme-h2o-heroPatterns.png)
+
+在没有图片的情况下单纯显示颜色会不会太无趣了点？于是想到了加入底纹元素，底纹素材是SVG格式的（保存在css样式里），加载比图片快很多。六种底纹（电路、食物、云海、钻石等等）供你选择，配置如下：
+
+```
+# Hero background patterns
+postPatterns: 'circuitBoard'
+```
+
+`postPatterns` 属性参数配置：
+
+底纹描述  |  参数
+------|------
+电路 | `circuitBoard`
+圆环 | `overlappingCircles`
+吃货日常：啃打鸡 | `food`
+土豪必备：钻石| `glamorous`
+圈圈叉叉 | `ticTacToe`
+中国风：云海 | `seaOfClouds`
+
+#### 自定义
+
+主题开发使用的技术栈也比较简单：引入jQuery类库、使用Sass代替CSS编写样式，使用Gulp完成Sass的编译、CSS和JavaScript的代码合并压缩等任务。
+
+如果你喜欢折腾，想对模板的代码进行修改，需要使用命令 `npm install` 安装 `package.json` 中的依赖，然后 `gulp` 一下即可开始你的自定义之旅。
+
+在了解H2O主题的目录结构之前，确保你对[Jekyll目录结构](http://jekyll.com.cn/docs/structure/)有所了解。
+
+```
+	.
+	├── _config.yml # 配置文件
+	├── _includes # 页面组件方便重用
+	|   ├── footer.html # 页脚
+	|   └── head.html # html文档的头部内容
+	|   └── header.html # 顶部菜单栏
+	|   └── pageNav.html # 文章列表分页组件
+	├── _layouts # 布局模板
+	|   ├── default.html # 默认模板
+	|   └── post.html # 文章页面模板
+	├── _posts # 这里放文章
+	|   ├── 2017-05-03-elements-of-javascript-style.md # 命名格式：年-月-日-文章标题.md
+	|   └── 2007-02-21-life-on-mars.md
+	├── _site # Jekyll将源码处理后生成的站点文件，里面的内容可直接发布
+	├── assets # 存放用于线上环境的静态资源，如需修改css和js文件请到dev文件夹
+	|   ├── css # dev文件夹中sass编译后的样式文件
+	|   └── fonts # 字体文件
+	|   └── icons # 图标文件
+	|   └── img #  图片文件
+	|   └── js # dev文件夹中处理后的脚本文件
+	├── dev # 开发文件
+	|   ├── js # 存放脚本源码
+	|   └── sass # 样式源码
+	|       └── app.scss # 整合下面的所有样式文件
+	|       └── base.scss # 引入字体、Reset部分样式
+	|       └── common.scss # 模板的主要样式
+	|       └── helper.scss # 工具样式
+	|       └── layouts.scss # 响应式布局
+	└── gulpfile.js # 自动化任务脚本
+	└── index.html # 模板首页
+	└── tags.html # 标签页面
+	└── 404.html # 404页面
+	└── package.json # 管理项目的依赖项
+```
+
+值得注意的是，css及js的源码都在 `dev` 文件夹中，每一次保存 gulp 都会对它们进行处理并保存到 `assets` 文件夹以供 `_site` 上线环境使用。
+
+#### Disqus
+
+[Disqus](https://disqus.com/)是一个第三方社交评论插件，体验相当不错。
+
+在配置文件 `_config.yml` 中找到comments的相关配置，设置 `disqus` 参数为 `true` 打开评论功能（ `false` 为关闭），并且设置 `disqus_url`。
+
+```
+# Comments
+comments:
+	disqus: true
+	disqus_url: 'https://your-disqus-username.disqus.com/embed.js'
+```
+
+注：`disqus` 默认值为 `false`
+
+#### Share.js
+
+为了让文章更方便地分享，使用了第三方分享插件[Share.js](https://github.com/overtrue/share.js)，支持一键分享到微博、QQ空间、QQ好友、微信、腾讯微博、豆瓣、Facebook、Twitter、Linkedin、Google+、点点等社交网站。
+
+```
+# Share
+social-share: true # 开启或者关闭分享功能
+social-share-items: ['wechat', 'weibo', 'douban','twitter']
+```
+
+### Contribution 贡献
+
+Any types of contribution are welcome. Thanks.
+
+接受各种形式的贡献，包括不限于提交问题与需求，修复代码。等待您的 ```Pull Request```
+
+#### 感谢参与代码贡献的伙伴
+
+- [Ray-Eldath](https://github.com/Ray-Eldath)
+- [sctop](https://github.com/sctop)
+- [bananaappletw](https://github.com/bananaappletw)
+- [moycat](https://github.com/moycat)
+
+### License 许可证
+
+Jekyll-Theme-H2O is licensed under [MIT](https://github.com/kaeyleo/jekyll-theme-H2O/blob/master/LICENSE).
