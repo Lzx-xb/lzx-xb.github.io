@@ -1,3 +1,4 @@
+
 # Configurations
 title:            Jekyll Gitbook
 longtitle:        Jekyll Gitbook
@@ -54,3 +55,4 @@ regenerate:       true
 plugins:
   - jekyll-feed
   - jemoji
+
