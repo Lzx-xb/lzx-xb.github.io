@@ -1,8 +1,8 @@
-# Jekyll GitBook
+# 我的学习博客
 
-Make Jelly site have a GitBook look!
+记录工作和学习过程中学习到的知识点，问题和解决办法。
 
-## Demo
+## 博客主题Demo
 
 Live demo on Github Pages: [https://sighingnow.github.io/jekyll-gitbook](https://sighingnow.github.io/jekyll-gitbook)
 
