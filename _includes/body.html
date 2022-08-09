@@ -26,10 +26,29 @@
             {%- include search.html -%}
         </div>
     </div>
+</div><div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+    </div>
 </div>
-<div class="pio-container right">
-    <div class="pio-action"></div>
-    <canvas id="pio" width="350" height="350"></canvas>
-</div>
+
+<script src="https://lzx-xb.github.io/assets/waifu-tips.js"></script>
+<script src="https://lzx-xb.github.io/assets/live2d.js"></script>
+
+<script type="text/javascript">
+    live2d_settings['modelId'] = 1;
+    live2d_settings['modelTexturesId'] = 87;
+    initModel("https://lzx-xb.github.io/assets/waifu-tips.json")
+    
+</script>
+<script src="https://lzx-xb.github.io/assets/autoload.js"></script>
 
 
