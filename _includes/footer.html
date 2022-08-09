@@ -38,11 +38,11 @@
     {%- endif -%}
 {%- endif -%}
 <!-- 看板娘 -->
-<!-- <script src="https://fastly.jsdelivr.net/gh/lzx-xb/live2d-widget@latest/autoload.js"></script> -->
+<script src="https://fastly.jsdelivr.net/gh/lzx-xb/live2d-widget@latest/autoload.js"></script>
 <!-- 引用 Live2D 核心组件 -->
-<script src='{{site.baseurl}}/usr/plugins/Pio/static/l2d.js'></script>
+<!-- <script src='{{site.baseurl}}/usr/plugins/Pio/static/l2d.js'></script> -->
 <!-- 引用看板娘交互组件 -->
-<script src='{{site.baseurl}}/usr/plugins/Pio/static/pio.js'></script>
+<!-- <script src='{{site.baseurl}}/usr/plugins/Pio/static/pio.js'></script> -->
 
 
 <!-- 动态背景 -->
@@ -63,22 +63,22 @@
         }
 </style>
 <script>
-    var pio = new Paul_Pio({
-    "mode": "fixed",
-    "hidden": true,
-    "content": {
-        "welcome": ["欢迎来到保罗的小宇宙！", "今天天气不错，一起来玩吧！", "博主每天都有些折腾记录，欢迎前往他的小窝阅读~"],
-        "custom": [
-            {"selector": ".comment-form", "text": "欢迎参与本文评论，别发小广告噢~"},
-            {"selector": ".home-social a:last-child", "text": "在这里可以了解博主的日常噢~"},
-            {"selector": ".post-item a", "type": "read"},
-            {"selector": ".post-content a, .page-content a", "type": "link"}
-        ]
-    },
-    "night": "single.night()",
-    "model": ["/usr/plugins/Pio/models/pio/model.json"]
-    });
-    pio.init();
+    // var pio = new Paul_Pio({
+    // "mode": "fixed",
+    // "hidden": true,
+    // "content": {
+    //     "welcome": ["欢迎来到保罗的小宇宙！", "今天天气不错，一起来玩吧！", "博主每天都有些折腾记录，欢迎前往他的小窝阅读~"],
+    //     "custom": [
+    //         {"selector": ".comment-form", "text": "欢迎参与本文评论，别发小广告噢~"},
+    //         {"selector": ".home-social a:last-child", "text": "在这里可以了解博主的日常噢~"},
+    //         {"selector": ".post-item a", "type": "read"},
+    //         {"selector": ".post-content a, .page-content a", "type": "link"}
+    //     ]
+    // },
+    // "night": "single.night()",
+    // "model": ["/usr/plugins/Pio/models/pio/model.json"]
+    // });
+    // pio.init();
     window.addEventListener('load', function () {
         let body = document.body;
         let content = ["❤去活出你自己。❤", "❤《日不落》❤", "❤《一格格》❤", "❤《森林巴士》❤", "❤《爱就一个字》❤",
