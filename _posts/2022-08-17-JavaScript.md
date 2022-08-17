@@ -10,7 +10,7 @@ layout: post
 实例
 ---
 学会面向对象思想，封装可复用组件。
-```js
+```javascript
 class TestClass {
 	constructor(options){
 		console.log(options)
