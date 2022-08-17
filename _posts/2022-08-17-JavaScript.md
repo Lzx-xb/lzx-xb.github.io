@@ -1,7 +1,7 @@
 ---
 title: ES6 CLASS 模块化
 author: lzx
-date: 2022-0817
+date: 2022-08-17
 category: Jekyll
 layout: post
 ---
