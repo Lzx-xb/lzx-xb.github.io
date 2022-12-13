@@ -94,8 +94,14 @@ export default TestClass
 ```
     这是比较基础的使用方式。后续参考ajax，uni.request(),wx,request()等封装方式方法。
 
-<div style="width:100px;height:100px;background-color: #00ff00;" onclick="alert('你好hello')">hello</div>
-<button type="button" onclick="alert('你好')">点我
+<div style="width:100px;height:100px;background-color: #00ff00;" onclick="clickme">hello</div>
+<button type="button" onclick="clickme">点我
 </button>
+
+<script>
+	function clickme(){
+		alert("你好，请开始你的表演");
+	}
+</script>
 
 [1]: https://lzx-xb.github.io/blog
