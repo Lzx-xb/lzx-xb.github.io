@@ -1,5 +1,5 @@
 ---
-title: ES6 CLASS 模块化
+title: JavaScript
 author: lzx
 date: 2022-08-17
 category: Jekyll
@@ -7,7 +7,7 @@ layout: post
 ---
 
 
-### Class
+## ES6 CLASS 模块化
 学会面向对象思想，封装可复用组件。
 ```javascript
 class TestClass {
@@ -94,10 +94,5 @@ export default TestClass
 ```
     这是比较基础的使用方式。后续参考ajax，uni.request(),wx,request()等封装方式方法。
 
-
-### 防抖，节流
-	防抖： </br>
-	节流：
-
-### 
+<div style="width:100px;height:100px;background-color: #00ff00;">hello</div>
 
