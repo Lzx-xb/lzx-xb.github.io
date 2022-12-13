@@ -1,5 +1,6 @@
 ---
 layout: home
+title: 博客简介
 ---
 
 ## 还没想好
