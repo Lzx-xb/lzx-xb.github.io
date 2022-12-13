@@ -94,5 +94,6 @@ export default TestClass
 ```
     这是比较基础的使用方式。后续参考ajax，uni.request(),wx,request()等封装方式方法。
 
-<div style="width:100px;height:100px;background-color: #00ff00;">hello</div>
+<div style="width:100px;height:100px;background-color: #00ff00;" onclick="alert(你好)">hello</div>
 
+[1]: https://lzx-xb.github.io/blog
