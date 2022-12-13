@@ -94,7 +94,7 @@ export default TestClass
 ```
     这是比较基础的使用方式。后续参考ajax，uni.request(),wx,request()等封装方式方法。
 
-<div style="width:100px;height:100px;background-color: #00ff00;" onclick="clickme()">hello</div>
+<div class="button" onclick="clickme()"><span>hello</span></div>
 <button type="button" onclick="clickme()">点我
 </button>
 
@@ -103,5 +103,50 @@ export default TestClass
 		alert("你好，请开始你的表演");
 	}
 </script>
+<style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+
 
 [1]: https://lzx-xb.github.io/blog
