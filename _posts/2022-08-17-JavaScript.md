@@ -94,8 +94,8 @@ export default TestClass
 ```
     这是比较基础的使用方式。后续参考ajax，uni.request(),wx,request()等封装方式方法。
 
-<div style="width:100px;height:100px;background-color: #00ff00;" onclick="clickme">hello</div>
-<button type="button" onclick="clickme">点我
+<div style="width:100px;height:100px;background-color: #00ff00;" onclick="clickme()">hello</div>
+<button type="button" onclick="clickme()">点我
 </button>
 
 <script>
