@@ -94,8 +94,8 @@ export default TestClass
 ```
     这是比较基础的使用方式。后续参考ajax，uni.request(),wx,request()等封装方式方法。
 
-<div class="btn" onclick="clickme()"><span>hello</span></div>
-<button class="btn" type="button" onclick="clickme()">
+<div class="myBtn" onclick="clickme()"><span>hello</span></div>
+<button class="myBtn" type="button" onclick="clickme()">
 <span>点我</span>
 </button>
 
@@ -105,7 +105,7 @@ export default TestClass
 	}
 </script>
 <style>
-.btn {
+.myBtn {
   display: inline-block;
   border-radius: 4px;
   background-color: #f4511e;
@@ -120,14 +120,14 @@ export default TestClass
   margin: 5px;
 }
 
-.btn span {
+.myBtn span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.btn span:after {
+.myBtn span:after {
   content: '»';
   position: absolute;
   opacity: 0;
@@ -135,15 +135,15 @@ export default TestClass
   right: -20px;
   transition: 0.5s;
 }
-.btn:hover {
+.myBtn:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-.btn:hover span {
+.myBtn:hover span {
   padding-right: 25px;
 }
 
-.btn:hover span:after {
+.myBtn:hover span:after {
   opacity: 1;
   right: 0;
 }
