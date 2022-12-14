@@ -11,6 +11,7 @@
         {% endif %}
     </head>
     <body>
+        
         <canvas height="926" width="1920" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;" id="c_n1"></canvas>
         <div class="book" id="container">
 
@@ -39,14 +40,13 @@
                     {% endif %}
                 </div>
             </div>
-
-            <script>
+        </div>
+        <script>
             var gitbook = gitbook || [];
             gitbook.push(function() {
                 gitbook.page.hasChanged({%- include metadata-home.json.tpl -%});
             });
-            </script>
-        </div>
+        </script>
 
         {%- include footer.html -%}
 
