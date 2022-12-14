@@ -40,15 +40,15 @@ title: 博客简介
         flex-wrap: wrap;
     }
     .container:after{
-        width: 100px;
+        width: 200px;
         padding: 20px;
         content: ''
     }
     .card{
         padding: 20px;
         width: 200px;
-        height: 300px;
-        margin: 40px 0;
+        height: 250px;
+        margin: 20px 0;
         background-color: #fff;
         border-radius: 10px;
         display: flex;
