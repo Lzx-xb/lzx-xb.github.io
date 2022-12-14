@@ -20,11 +20,11 @@ title: 博客简介
             <img class="img" src="./gitbook/images/uniapp.png" alt="">
             <span>uniapp官网</span>
         </div>
-        <div class="card" onclick="window.open('https://ant.design/index-cn">
+        <div class="card" onclick="window.open('https://ant.design/index-cn')">
             <img class="img" src="./gitbook/images/ant.svg" alt="">
             <span>ant官网</span>
         </div>
-        <div class="card" onclick="window.open('https://element.eleme.cn/#/zh-CN">
+        <div class="card" onclick="window.open('https://element.eleme.cn/#/zh-CN')">
             <img class="img" src="./gitbook/images/elementUi.jpg" alt="">
             <span>element官网</span>
         </div>
@@ -53,10 +53,11 @@ title: 博客简介
         border-radius: 10px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         cursor: pointer;
-        
+        transition: all 0.5s;
+        font-weight: bolder;
     }
     .img{
         width: 150px; 
