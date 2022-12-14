@@ -41,7 +41,6 @@ title: 博客简介
     }
     .container:after{
         width: 200px;
-        padding: 20px;
         content: ''
     }
     .card{
