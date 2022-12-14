@@ -41,14 +41,14 @@ title: 博客简介
     }
     .container:after{
         width: 100px;
-        padding: 10px;
+        padding: 20px;
         content: ''
     }
     .card{
-        padding: 10px;
-        width: 100px;
-        height: 120px;
-        margin: 20px 0;
+        padding: 20px;
+        width: 200px;
+        height: 300px;
+        margin: 40px 0;
         background-color: #fff;
         border-radius: 10px;
         display: flex;
@@ -59,8 +59,8 @@ title: 博客简介
         
     }
     .img{
-        width: 100px; 
-        height: 100px;
+        width: 150px; 
+        height: 150px;
         border-radius: 10px;
     }
     .clamp{
