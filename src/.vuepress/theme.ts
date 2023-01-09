@@ -90,10 +90,27 @@ export default hopeTheme({
        * Using Giscus
        */
       provider: "Giscus",
-      repo: "/",
-      repoId: "R_kgDOG_Pt2A",
+      repo: "lzx-xb/lzx-xb.github.io",
+      repoId: "R_kgDOHoGmAw",
       category: "Announcements",
-      categoryId: "DIC_kwDOG_Pt2M4COD69",
+      categoryId: "DIC_kwDOHoGmA84CTfYj",
+      /**
+       * <script src="https://giscus.app/client.js"
+        data-repo="Lzx-xb/lzx-xb.github.io"
+        data-repo-id="R_kgDOHoGmAw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOHoGmA84CTfYj"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+       */
 
       /**
        * Using Twikoo
