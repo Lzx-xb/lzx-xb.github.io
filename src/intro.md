@@ -4,4 +4,4 @@ icon: info
 
 # Intro Page
 
-Place your introduction and profile here.
+Self-use learning blog records the knowledge and difficulties encountered in work and study.

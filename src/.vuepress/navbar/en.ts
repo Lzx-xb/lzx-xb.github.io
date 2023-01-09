@@ -44,9 +44,4 @@ export const enNavbar = navbar([
       "strawberry",
     ],
   },
-  {
-    text: "V2 Docs",
-    icon: "note",
-    link: "https://theme-hope.vuejs.vuepress/",
-  },
 ]);
