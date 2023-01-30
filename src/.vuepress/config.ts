@@ -6,6 +6,7 @@ export default defineUserConfig({
   base: "/",
   plugins: [
     docsearchPlugin({
+      appId: 'WPYE5MFAE8',
       apiKey: 'fa9d6589c026727c9f0034c079139c6d',
       indexName: 'dev_blogSearch',
       locales: {
