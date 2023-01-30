@@ -16,8 +16,6 @@ export default hopeTheme({
 
   repo: "/",
 
-  bgImage: "https://github.com/Lzx-xb/lzx-xb.github.io/src/.vuepress/public/bgwallhaven.png",
-
   docsDir: "docs",
 
   blog: {

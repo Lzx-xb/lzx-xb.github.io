@@ -5,6 +5,7 @@ icon: home
 title: Blog Home
 heroImage: /logo.svg
 heroText: 漫步人生路
+bgImage: "https://lzx-xb.github.io/bgwallhaven.png"
 tagline: Push the goal far and let the ideal always be ahead
 heroFullScreen: true
 projects:
