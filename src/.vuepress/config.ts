@@ -1,6 +1,10 @@
 import { defineUserConfig } from "vuepress";
 import { docsearchPlugin } from '@vuepress/plugin-docsearch';
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
+import { getDirname, path } from '@vuepress/utils';
 import theme from "./theme.js";
+
+const __dirname = getDirname(import.meta.url)
 
 export default defineUserConfig({
   base: "/",
@@ -61,6 +65,10 @@ export default defineUserConfig({
         },
       },
     }),
+    registerComponentsPlugin({
+      // 配置项
+      componentsDir: path.resolve(__dirname, './components'),
+    }),
   ],
   locales: {
     "/": {
@@ -74,6 +82,10 @@ export default defineUserConfig({
       description: "漫步人生路的博客",
     },
   },
+  head: [
+    // ["script", { src: "YOUR_SCRIPT_LINK" }],
+    // ["link", { rel: "stylesheet", href: "./wowjs/animate.css" }],
+  ],
 
   theme,
 

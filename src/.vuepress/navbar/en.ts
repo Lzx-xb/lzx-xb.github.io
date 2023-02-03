@@ -2,46 +2,35 @@ import { navbar } from "vuepress-theme-hope";
 
 export const enNavbar = navbar([
   "/",
-  { text: "Demo", icon: "discover", link: "/demo/" },
+  // { text: "Page config", icon: "discover", link: "/demo/" },
+  { text: "Start", icon: "discover", link: "/intro" },
   {
     text: "Posts",
     icon: "edit",
     prefix: "/posts/",
     children: [
       {
-        text: "Apple",
+        text: "Css",
         icon: "edit",
-        prefix: "apple/",
+        prefix: "css/",
         children: [
-          { text: "Apple1", icon: "edit", link: "1" },
-          { text: "Apple2", icon: "edit", link: "2" },
-          "3",
-          "4",
+          { text: "Left aligned", icon: "edit", link: "flex-bewteen" },
+          { text: "Text clamp", icon: "edit", link: "cssclamp" },
         ],
       },
       {
-        text: "Banana",
+        text: "Tool",
         icon: "edit",
-        prefix: "banana/",
+        prefix: "tool/",
         children: [
           {
-            text: "Banana 1",
+            text: "Watermark",
             icon: "edit",
-            link: "1",
+            link: "watermark",
           },
-          {
-            text: "Banana 2",
-            icon: "edit",
-            link: "2",
-          },
-          "3",
-          "4",
         ],
       },
-      { text: "Cherry", icon: "edit", link: "cherry" },
-      { text: "Dragon Fruit", icon: "edit", link: "dragonfruit" },
-      "tomato",
-      "strawberry",
+      // { text: "Cherry", icon: "edit", link: "cherry" },
     ],
   },
 ]);

@@ -14,6 +14,11 @@ projects:
     desc: 自用学习博客，记录工作和学习中遇到的知识与难点。
     link: https://github.com/Lzx-xb/lzx-xb.github.io
 
+  - icon: /logo.svg
+    name: 面试
+    desc: 收集面试过程中被问到的面试题以及参考答案
+    link: https://lzx-xb.github.io/blog/interview/
+
 footer: 风中赏雪，雾里赏花，快乐回旋
 ---
 
