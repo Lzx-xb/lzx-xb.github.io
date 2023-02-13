@@ -18,7 +18,7 @@
             setWaterMark("lzx","梅花香自苦寒来")
             AOS.init();
         },
-        destroyed(){
+        unmounted(){
             removeWatermark();
         },
         methods: {

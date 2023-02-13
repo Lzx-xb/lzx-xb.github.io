@@ -39,6 +39,20 @@ export const zhSidebar = sidebar({
           collapsible: true,
           children: "structure",
         },
+        {
+          text: "JavaScript",
+          icon: "edit",
+          prefix: "javascript/",
+          collapsible: true,
+          children: "structure",
+        },
+        {
+          text: "Vue",
+          icon: "edit",
+          prefix: "vue/",
+          collapsible: true,
+          children: "structure",
+        }
       ],
     },
     "slides",

@@ -23,9 +23,9 @@ const setWatermark = (str1, str2) => {
     const div = document.createElement('div')
     div.id = id
     div.style.pointerEvents = 'none'
-    div.style.top = '20px'
+    div.style.top = '16px'
     div.style.left = '0px'
-    div.style.opacity = '0.2'
+    div.style.opacity = '0.3'
     div.style.position = 'fixed'
     div.style.zIndex = '100000'
     div.style.width = document.documentElement.clientWidth + 'px'
@@ -37,7 +37,7 @@ const setWatermark = (str1, str2) => {
 
   // 添加水印方法
   export const setWaterMark = (str1, str2) => {
-    let id = setWatermark(str1, str2)
+    let id = setWatermark(str1, str2);
     if (document.getElementById(id) === null) {
       id = setWatermark(str1, str2)
     }
@@ -45,7 +45,7 @@ const setWatermark = (str1, str2) => {
  
   // 移除水印方法
   export const removeWatermark = () => {
-    const id = '1.23452384164.123412415'
+    const id = '1.23452384164.123412415';
     if (document.getElementById(id) !== null) {
       document.body.removeChild(document.getElementById(id))
     }
