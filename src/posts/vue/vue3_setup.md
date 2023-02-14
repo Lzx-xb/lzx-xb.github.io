@@ -40,7 +40,7 @@ tag:
 &emsp;&emsp;- js中操作数据：xxx.value;  
 &emsp;&emsp;- 模板中读取数据，不需要value，直接`<div>{{xxx}}</div>`  
 备注：   
-&emsp;&emsp;·接收数据类型可以是基本数据类型，也可以是对象类型；
+&emsp;&emsp;·接收数据类型可以是基本数据类型，也可以是对象类型；  
 &emsp;&emsp;·基本数据类型：响应式依然是靠Object.defineProperty()的get和set完成的。  
 &emsp;&emsp;·对象数据类型：内部使用了vue3.0中的reactive函数
 
