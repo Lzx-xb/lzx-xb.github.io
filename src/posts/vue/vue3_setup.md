@@ -174,6 +174,70 @@ ref也可以用来定义==对象（或数组）类型数据==，它内部会自�
 &emsp;&emsp;&emsp;&emsp;· slots：收到插槽内容，相当于`this.$slots`。  
 &emsp;&emsp;&emsp;&emsp;· emit：分发自定义事件的函数，相当于`this.$emit`。
 
+```vue
+<!-- 调用demo 组件 -->
+<template>
+    <!-- 传入两个参数 -->
+    <Demo @hello="showMsg" msg="你好" school="gdou">
+    <!-- 插槽 -->
+        <template v-slot:test>
+            <span>你好</span>
+        </template>
+    </Demo>
+</tempalte>
+<script>
+    import Demo from "./components/demo.vue";
+    export default {
+        components: { Demo },
+
+        setup(){
+            function showMsg(value){
+                console.log(`你好啊，我收到的参数是${value}`);
+            }
+            return {
+                showMsg,
+            }
+        }
+    }  
+</script>
+```
+
+```vue
+<!-- Demo 组件 -->
+<template>
+    <div>
+        <buttom @click="test">触发emit事件</button>
+    </div>
+</tempalte>
+<script>
+    import { reactive } from "vue";
+    export default {
+        //传入什么值，props就要设置什么值，否则会出现警告。
+        props: ["msg","school"],
+        //传什么事件，则需要声明，否则出现警告。
+        emit: ["hello"],
+        setup(props, context){//第一个参数为props值,第二个是context值，上下文对象
+            console.log("---setup---",props);
+            console.log("---setup---",context.attrs);//相当于vue2中的$attrs
+            console.log("---setup---",context.emit);//触发自定义事件
+            console.log("---setup---",context.slots);//插槽
+
+            function test(){
+                context.emit("hello",666)
+            }
+
+            return {
+                test,
+            }
+            
+        }
+    }  
+</script>
+<style>
+
+</style>
+```
+
 
 
 [1]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy
