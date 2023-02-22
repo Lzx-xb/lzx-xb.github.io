@@ -1,7 +1,6 @@
 ---
 title: Linux Memo
 date: 2023-02-22
-index: false
 icon: discover
 category:
   - Other
