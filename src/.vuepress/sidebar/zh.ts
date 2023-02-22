@@ -35,7 +35,6 @@ export const zhSidebar = sidebar({
           text: "其他内容",
           icon: "edit",
           prefix: "other/",
-          link: 'other/',
           collapsible: true,
           children: "structure",
         },
