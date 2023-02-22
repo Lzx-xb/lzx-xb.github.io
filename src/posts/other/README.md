@@ -4,7 +4,6 @@ index: false
 icon: discover
 category:
   - Other
-  - 其他内容
 footer: 页脚
 ---
 
