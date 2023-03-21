@@ -5,6 +5,13 @@ import { enSidebar, zhSidebar } from "./sidebar/index.js";
 export default hopeTheme({
   hostname: "https://github.com/Lzx-xb/lzx-xb.github.io",
 
+  themeColor: {
+    blue: "#2196f3",
+    red: "#f26d6d",
+    green: "#3eaf7c",
+    orange: "#fb9b5f",
+  },
+  fullscreen: true,
   author: {
     name: "漫步人生路",
     url: "https://lzx-xb.github.io/",
