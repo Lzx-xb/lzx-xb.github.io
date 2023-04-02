@@ -33,4 +33,5 @@ export const enNavbar = navbar([
       // { text: "Cherry", icon: "edit", link: "cherry" },
     ],
   },
+  { text: "考试笔记", icon: "ci", link: "/posts/civil/intro" }
 ]);

@@ -75,17 +75,30 @@ export default defineUserConfig({
       lang: "en-US",
       title: "漫步人生路",
       description: "A blog for 漫步人生路",
+      head: [
+        //waifu-tips.js 依赖 JQuery 库
+        // <script src="assets/jquery.min.js?v=3.3.1"></script>
+        ["script", {src: "/kanban/lib/L2Dwidget.min.js"}],
+        ["script", {src: "/kanban/initLWDwidget.js"}],
+        // ["script", { src: "YOUR_SCRIPT_LINK" }],
+        // ["link", { rel: "stylesheet", href: "./wowjs/animate.css" }],
+      ],
     },
     "/zh/": {
       lang: "zh-CN",
       title: "漫步人生路",
       description: "漫步人生路的博客",
+      head: [
+        //waifu-tips.js 依赖 JQuery 库
+        // <script src="assets/jquery.min.js?v=3.3.1"></script>
+        ["script", {src: "/kanban/lib/L2Dwidget.min.js"}],
+        ["script", {src: "/kanban/initLWDwidget.js"}],
+        // ["script", { src: "YOUR_SCRIPT_LINK" }],
+        // ["link", { rel: "stylesheet", href: "./wowjs/animate.css" }],
+      ],
     },
   },
-  head: [
-    // ["script", { src: "YOUR_SCRIPT_LINK" }],
-    // ["link", { rel: "stylesheet", href: "./wowjs/animate.css" }],
-  ],
+  
 
   theme,
 

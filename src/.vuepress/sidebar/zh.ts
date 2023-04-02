@@ -54,6 +54,28 @@ export const zhSidebar = sidebar({
         }
       ],
     },
+    {
+      text: "考试笔记",
+      icon: "study",
+      prefix: "posts/civil/",
+      children: [
+        "intro",
+        {
+          text: "事业单位",
+          icon: "people",
+          prefix: "shiye/",
+          collapsible: true,
+          children: "structure",
+        },
+        {
+          text: "公务员",
+          icon: "ability",
+          prefix: "kaogong/",
+          collapsible: true,
+          children: "structure",
+        }
+      ]
+    },
     "slides",
   ],
 });

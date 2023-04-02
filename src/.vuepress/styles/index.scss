@@ -1,1 +1,12 @@
 // place your custom styles here
+.echarts-wrapper{
+    min-height: 400px;
+    height: 650px;
+}
+
+.change-skip-btn {
+    width: 26px;
+    height: 26px;
+    background-color: aqua;
+    display: none;
+}

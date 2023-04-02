@@ -30,8 +30,8 @@ export const zhNavbar = navbar([
           },
         ],
       },
-      
       // { text: "樱桃", icon: "edit", link: "cherry" },
     ],
   },
+  { text: "考试笔记", icon: "ci", link: "/zh/posts/civil/intro" }
 ]);
