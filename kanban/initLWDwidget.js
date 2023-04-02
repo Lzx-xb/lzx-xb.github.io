@@ -1,5 +1,5 @@
 // console.log(window.screen.width);
-let p = initKanban();
+initKanban();
 async function initKanban(){
 if (window.screen.width > 419) {
     let p =  new Promise((resolve, reject) => {
