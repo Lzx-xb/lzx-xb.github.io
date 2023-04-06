@@ -75,33 +75,68 @@ export default defineUserConfig({
       lang: "en-US",
       title: "漫步人生路",
       description: "A blog for 漫步人生路",
-      head: [
-        //waifu-tips.js 依赖 JQuery 库
-        // <script src="assets/jquery.min.js?v=3.3.1"></script>
-        ["script", {src: "/kanban/lib/L2Dwidget.min.js"}],
-        ["script", {src: "/kanban/initLWDwidget.js"}],
-        // ["script", { src: "YOUR_SCRIPT_LINK" }],
-        // ["link", { rel: "stylesheet", href: "./wowjs/animate.css" }],
-      ],
+      // head: [
+      //   ["link", { rel: "stylesheet", href: "/css/style.css" }],
+      //   //waifu-tips.js 依赖 JQuery 库
+      //   // <script src="assets/jquery.min.js?v=3.3.1"></script>
+      //   ["script", {src: "/kanban/lib/L2Dwidget.min.js"}],
+      //   ["script", {src: "/kanban/initLWDwidget.js"}],
+      //   ["script", {type: "module"}, 
+      //   ` import { fairyDustCursor } from "/js/fairyDustCursor.js";
+      //     new fairyDustCursor();`
+      //   ],
+      //   // ["script", {src: "/js/index.js"}],
+        
+      //   // ["script", { src: "YOUR_SCRIPT_LINK" }],
+      //   // ["link", { rel: "stylesheet", href: "./wowjs/animate.css" }],
+      // ],
     },
     "/zh/": {
       lang: "zh-CN",
       title: "漫步人生路",
       description: "漫步人生路的博客",
-      head: [
-        //waifu-tips.js 依赖 JQuery 库
-        // <script src="assets/jquery.min.js?v=3.3.1"></script>
-        ["script", {src: "/kanban/lib/L2Dwidget.min.js"}],
-        ["script", {src: "/kanban/initLWDwidget.js"}],
+      // head: [
+      //   ["link", { rel: "stylesheet", href: "/css/style.css" }],
+      //   //waifu-tips.js 依赖 JQuery 库
+      //   // <script src="assets/jquery.min.js?v=3.3.1"></script>
+      //   ["script", {src: "/kanban/lib/L2Dwidget.min.js"}],
+      //   ["script", {src: "/kanban/initLWDwidget.js"}],
+      //   ["script", {type: "module"},
+      //   ` import { fairyDustCursor } from "/js/fairyDustCursor.js";
+      //   console.log("執行")
+        
+      //   if(!fairDust){
+      //     var fairDust =  new fairyDustCursor();
+      //   }else {
+      //     fairDust.destroy()
+      //   }
+      //   `],
+        // ["script", {src: "/js/index.js"}],
         // ["script", { src: "YOUR_SCRIPT_LINK" }],
-        // ["link", { rel: "stylesheet", href: "./wowjs/animate.css" }],
-      ],
+        
+      // ],
     },
   },
   
 
   theme,
-
+  head: [
+  //   ["link", { rel: "stylesheet", href: "/css/style.css" }],
+  //   //waifu-tips.js 依赖 JQuery 库
+    // <script src="assets/jquery.min.js?v=3.3.1"></script>
+    ["script", {src: "/kanban/lib/L2Dwidget.min.js"}],
+    ["script", {type: "module", src: "/js/index.js"}],
+  //   ["script", {type: "module"},
+  //   ` import { fairyDustCursor } from "/js/fairyDustCursor.js";
+    
+  //   let fairDustDom = document.getElementById("fairDust");
+  //   console.log(fairDustDom);
+  //   if(!fairDustDom){
+  //     console.log("執行")
+  //     new fairyDustCursor();
+  //   }
+  //   `], 
+  ],
   
   
   shouldPrefetch: false,
