@@ -32,6 +32,5 @@ if (window.screen.width > 419) {
     }).catch((res)=> {
         console.log("promise catch", res)
     })
-    console.log(document.getElementById("live2d-widget"))
 }
 }
