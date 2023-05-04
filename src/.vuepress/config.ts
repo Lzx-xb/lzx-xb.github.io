@@ -126,6 +126,8 @@ export default defineUserConfig({
     // <script src="assets/jquery.min.js?v=3.3.1"></script>
     ["script", {src: "/kanban/lib/L2Dwidget.min.js"}],
     ["script", {type: "module", src: "/js/index.js"}],
+    ['link', { rel: 'stylesheet', href: '/css/swiper-bundle.min.css'}],
+    ["script", {src: "/js/swiper-bundle-min.js"}]
   //   ["script", {type: "module"},
   //   ` import { fairyDustCursor } from "/js/fairyDustCursor.js";
     

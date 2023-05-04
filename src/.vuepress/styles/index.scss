@@ -1,5 +1,5 @@
 // place your custom styles here
-.echarts-wrapper{
+.echarts-wrapper {
     min-height: 400px;
     height: 650px;
 }
@@ -9,4 +9,135 @@
     height: 26px;
     background-color: aqua;
     display: none;
+}
+
+.chothesContain {
+    min-width: 50px;
+    min-height: 140px;
+    display: flex;
+    position: fixed;
+    top: 10%;
+    right: -250px;
+    border-radius: 5px;
+    z-index: 999;
+    // background-color: aquamarine;
+    // transform: translate("-50%","-50%");
+    // transform: translateY(-50%);
+    transition: all 1s;
+    // box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    // background-image: url('/head.png');
+    // background-position: center;
+    // background-size: cover;
+    border: none;
+    .imgBox {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 20px;
+        padding-left: 20px;
+        overflow: hidden;
+    }
+
+    .img-class {
+        width: 50px;
+        height: 140px;
+        cursor: pointer;
+        transition: all .6s;
+        opacity: 0.7;
+        
+    }
+
+    .img-class:hover {
+        transform: scale(1.2);
+        // transform: ;
+        // transition: all 1s;
+        // animation: imgHover 1s linear infinite 
+        // animation: name duration timing-function delay iteration-count direction fill-mode;
+    }
+}
+
+// .chothesContain:hover{
+//     transform: translate(-270px, 0);
+// }
+
+
+.clothesWin {
+    width: 250px;
+    height: 250px;
+    background-color: aquamarine;
+    // display: flex;
+    // position: fixed;
+    // top: 8%;
+    // right: -250px;
+    border-radius: 5px;
+    // z-index: 999;
+    //animation: moveout_clothesWin 1s linear; 
+}
+
+.clothesWinShow {
+    // right: 20px;
+    // animation: move_clothesWin 800ms linear;
+    transform: translateX(-270px);
+}
+
+.clothesWinHide {
+    transform: translateX(0px);
+    // right: -250px;
+    // animation: moveout_clothesWin 800ms linear;
+}
+
+/* 关闭按钮样式 */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+@-webkit-keyframes move_clothesWin {
+    from {
+        right: -250px;
+    }
+
+    to {
+        right: 20px;
+    }
+}
+
+@keyframes move_clothesWin {
+    from {
+        right: -250px;
+    }
+
+    to {
+        right: 20px;
+    }
+}
+
+@-webkit-keyframes moveout_clothesWin {
+    from {
+        right: 20px;
+    }
+
+    to {
+        right: -250px;
+    }
+}
+
+@keyframes moveout_clothesWin {
+    from {
+        right: 20px;
+    }
+
+    to {
+        right: -250px;
+    }
 }
