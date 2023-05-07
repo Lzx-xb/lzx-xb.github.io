@@ -1,5 +1,10 @@
 
 import { fairyDustCursor } from '/js/fairyDustCursor.js';
+// import { Swiper } from '/js/swiper-bundle.min.js';
+import { clothesData } from '/js/clothesData.js';
+
+var activeIndex = 0;// 衣橱选择索引值；
+var widget; // 看板娘；
 // 鼠標移動效果，判斷是否存在canvas 若存在則不需new 實例；
 let fairDustDom = document.getElementById("fairDust");
 if (!fairDustDom) {
@@ -11,18 +16,43 @@ if (!parent) {
     initKanban();
 }
 
+function changeKanban(item) {
+    localStorage.removeItem("model");
+    localStorage.setItem("model", JSON.stringify(item));
+    L2Dwidget.init({
+        model: { jsonPath: item.jsonPath ? item.jsonPath : "/kanban/vert_swimwear/index.json" },
+        display: {
+            width: item.width ? item.width : 150,
+            height: item.height ? item.height : 300,
+            hOffset: item.hOffset ? item.hOffset : 0,
+            vOffset: item.vOffset ? item.vOffset : -20,
+        },
+        mobile: {
+            show: false,
+            scale: 0.1
+        }
+    })
+}
 
-
-async function initKanban() {
+async function initKanban(jsonPath) {
     if (window.screen.width > 419) {
         // 初始化 衣橱
         initClothes();
     }
-    let a = L2Dwidget.init({
-        // model:{jsonPath:"/kanban/asuna/asuna_04.model.json"},
-        // model:{jsonPath:"/kanban/shizuku-pajama/index.json"},
-        model: { jsonPath: "/kanban/vert_swimwear/index.json" },
-        // model: { jsonPath: "/kanban/Potion-Maker/Tia/index.json" },
+    let modelItem = JSON.parse(localStorage.getItem("model"));
+    if (!modelItem) {
+        modelItem = clothesData[0];
+        localStorage.setItem("model", JSON.stringify(modelItem));
+    }
+    widget = L2Dwidget.init({
+
+        model: { jsonPath: modelItem.jsonPath ? modelItem.jsonPath : "/kanban/vert_swimwear/index.json" },
+        display: {
+            width: modelItem.width ? modelItem.width : 150,
+            height: modelItem.height ? modelItem.height : 300,
+            hOffset: modelItem.hOffset ? modelItem.hOffset : 0,
+            vOffset: modelItem.vOffset ? modelItem.vOffset : -20,
+        },
         mobile: {
             show: false,
             scale: 0.1
@@ -79,6 +109,7 @@ function initClothes() {
     clothesWin.className = 'clothesWin';
     // TODO 关闭按钮
     let closedBtn = document.createElement('div');
+    closedBtn.classList.add('closedBox');
     let spanEl = document.createElement('span');
     spanEl.innerHTML = '&times;';
     spanEl.classList.add('close');
@@ -88,14 +119,57 @@ function initClothes() {
     }
     closedBtn.appendChild(spanEl);
     // TODO swiper 卡片选择
+    let swiperBox = document.createElement('div');
+    swiperBox.classList.add("swiper", "mySwiper");
+    let swiperWrapper = document.createElement('div');
+    swiperWrapper.classList.add('swiper-wrapper');
+    //渲染swiper
+    clothesData.forEach((data, index, arr) => {
+        let cardEl = document.createElement("div");
+        cardEl.classList.add("swiper-slide");
+        let imgEl = document.createElement("img");
+        imgEl.setAttribute("src", data.image);
+        imgEl.classList.add("cards");
+        cardEl.appendChild(imgEl);
+        swiperWrapper.appendChild(cardEl);
+    });
+    swiperBox.appendChild(swiperWrapper);
+
     // TODO 确定按钮
-    clothesWin.appendChild(closedBtn);
+    let confirmBtn = document.createElement('div');
+    confirmBtn.classList.add("confirmBox")
+    let btn = document.createElement("button");
+    btn.classList.add("btn");
+    btn.innerHTML = "选择";
+    confirmBtn.appendChild(btn);
+
+
+    clothesWin.appendChild(closedBtn);//关闭按钮
+    clothesWin.appendChild(swiperBox);//swiper
+    clothesWin.appendChild(confirmBtn);// 选择按钮
     chothesContain.appendChild(clothesWin);
     // clothesWin.addEventListener("click", chooseClothes);
     document.querySelector("body").appendChild(chothesContain);
     img.onclick = function () {
         chooseClothes(chothesContain);
     }
+
+    //使用swiper
+    new Swiper(".mySwiper", {
+        effect: "cards",
+        grabCursor: true,
+        // loop: true,
+        on: {
+            slideChange: function (swiper) {
+                activeIndex = swiper.activeIndex;
+            },
+        }
+    });
+
+    btn.onclick = function () {
+        changeKanban(clothesData[activeIndex]);
+    }
+
     // 鼠标移出后关闭衣橱菜单
     // clothesWin.onmouseleave = function(e){
     //     clothesWinHide(e, chothesContain)
@@ -103,7 +177,6 @@ function initClothes() {
 }
 
 function chooseClothes() {
-    console.log("----请选择衣服");
     // let chothesContain = document.getElementById("chothesContain");
     chothesContain.classList.remove("clothesWinHide");
     chothesContain.classList.add("clothesWinShow");
