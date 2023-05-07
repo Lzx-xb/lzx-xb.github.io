@@ -168,6 +168,7 @@ function initClothes() {
 
     btn.onclick = function () {
         changeKanban(clothesData[activeIndex]);
+        chooseClothes();
     }
 
     // 鼠标移出后关闭衣橱菜单
