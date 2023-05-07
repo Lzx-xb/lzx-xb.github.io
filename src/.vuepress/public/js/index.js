@@ -160,21 +160,13 @@ function initClothes() {
         grabCursor: true,
         // loop: true,
         on: {
-            click: function (swiper) {
-                console.log("swiper", swiper);
-            },
             slideChange: function (swiper) {
                 activeIndex = swiper.activeIndex;
-                console.log("activeIndex", swiper.activeIndex);
-                console.log('slideChange', swiper);
-                console.log("clothes", clothesData[swiper.activeIndex]);
             },
         }
     });
 
     btn.onclick = function () {
-        console.log(activeIndex);
-        console.log(clothesData[activeIndex]);
         changeKanban(clothesData[activeIndex]);
     }
 
@@ -185,7 +177,6 @@ function initClothes() {
 }
 
 function chooseClothes() {
-    console.log("----请选择衣服");
     // let chothesContain = document.getElementById("chothesContain");
     chothesContain.classList.remove("clothesWinHide");
     chothesContain.classList.add("clothesWinShow");
