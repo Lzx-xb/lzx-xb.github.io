@@ -166,9 +166,9 @@ function initClothes() {
         }
     });
 
-    btn.onclick = function () {
+    btn.onclick = function (e) {
         changeKanban(clothesData[activeIndex]);
-        chooseClothes();
+        clothesWinHide(e, chothesContain);
     }
 
     // 鼠标移出后关闭衣橱菜单
