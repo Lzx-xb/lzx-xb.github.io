@@ -7,7 +7,7 @@
 .change-skip-btn {
     width: 26px;
     height: 26px;
-    background-color: aqua;
+    background-color: #ed5126;
     display: none;
 }
 
@@ -17,7 +17,7 @@
     display: flex;
     position: fixed;
     top: 10%;
-    right: -250px;
+    right: -160px;
     border-radius: 5px;
     z-index: 999;
     // background-color: aquamarine;
@@ -29,6 +29,7 @@
     // background-position: center;
     // background-size: cover;
     border: none;
+
     .imgBox {
         display: flex;
         align-items: flex-start;
@@ -43,7 +44,7 @@
         cursor: pointer;
         transition: all .6s;
         opacity: 0.7;
-        
+
     }
 
     .img-class:hover {
@@ -61,9 +62,17 @@
 
 
 .clothesWin {
-    width: 250px;
-    height: 250px;
-    background-color: aquamarine;
+    width: 160px;
+    height: 270px;
+    background: #ddd6f3;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #faaca8, #ddd6f3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #faaca8, #ddd6f3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
     // display: flex;
     // position: fixed;
     // top: 8%;
@@ -76,7 +85,7 @@
 .clothesWinShow {
     // right: 20px;
     // animation: move_clothesWin 800ms linear;
-    transform: translateX(-270px);
+    transform: translateX(-180px);
 }
 
 .clothesWinHide {
@@ -88,18 +97,118 @@
 /* 关闭按钮样式 */
 .close {
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
     margin-right: 10px;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
+
+.closedBox {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cards {
+    min-width: 100%;
+    height: auto;
+}
+
+/** swiper */
+.swiper {
+    width: 80px;
+    height: 200px;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.swiper-slide:nth-child(1n) {
+    background-color: rgb(206, 17, 17);
+}
+
+.swiper-slide:nth-child(2n) {
+    background-color: rgb(0, 140, 255);
+}
+
+.swiper-slide:nth-child(3n) {
+    background-color: rgb(10, 184, 111);
+}
+
+.swiper-slide:nth-child(4n) {
+    background-color: rgb(211, 122, 7);
+}
+
+.swiper-slide:nth-child(5n) {
+    background-color: rgb(118, 163, 12);
+}
+
+.swiper-slide:nth-child(6n) {
+    background-color: rgb(180, 10, 47);
+}
+
+.swiper-slide:nth-child(7n) {
+    background-color: rgb(35, 99, 19);
+}
+
+.swiper-slide:nth-child(8n) {
+    background-color: rgb(0, 68, 255);
+}
+
+.swiper-slide:nth-child(9n) {
+    background-color: rgb(218, 12, 218);
+}
+
+.swiper-slide:nth-child(10n) {
+    background-color: rgb(54, 94, 77);
+}
+
+/**  确认按钮 */
+.confirmBox {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn {
+    width: 90%;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    color: #132c33;
+    font-weight: bolder;
+    background: #1FA2FF;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.btn:hover {
+    color: #eef7f2;
+    background: #CC95C0;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    cursor: pointer;
+
+}
 
 
 @-webkit-keyframes move_clothesWin {

@@ -124,10 +124,10 @@ export default defineUserConfig({
   //   ["link", { rel: "stylesheet", href: "/css/style.css" }],
   //   //waifu-tips.js 依赖 JQuery 库
     // <script src="assets/jquery.min.js?v=3.3.1"></script>
+    ['link', { rel: 'stylesheet', href: '/css/swiper-bundle.min.css'}],
+    ["script", {src: "/js/swiper-bundle.min.js"}],
     ["script", {src: "/kanban/lib/L2Dwidget.min.js"}],
     ["script", {type: "module", src: "/js/index.js"}],
-    ['link', { rel: 'stylesheet', href: '/css/swiper-bundle.min.css'}],
-    ["script", {src: "/js/swiper-bundle-min.js"}]
   //   ["script", {type: "module"},
   //   ` import { fairyDustCursor } from "/js/fairyDustCursor.js";
     
