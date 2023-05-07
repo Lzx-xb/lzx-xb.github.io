@@ -48,8 +48,8 @@ async function initKanban(jsonPath) {
 
         model: { jsonPath: modelItem.jsonPath ? modelItem.jsonPath : "/kanban/vert_swimwear/index.json" },
         display: {
-            width: modelItem.width ? modelItem.width : 150,
-            height: modelItem.height ? modelItem.height : 300,
+            width: modelItem.width ? modelItem.width : 100,
+            height: modelItem.height ? modelItem.height : 250,
             hOffset: modelItem.hOffset ? modelItem.hOffset : 0,
             vOffset: modelItem.vOffset ? modelItem.vOffset : -20,
         },
