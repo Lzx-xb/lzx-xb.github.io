@@ -1,11 +1,11 @@
 ---
-title: economy
+title: 经济
 icon: edit
 date: 2023-04-01
 category:
   - economy
 tag:
-  - economy
+  - 经济
 ---
 
 ```mindmap 
