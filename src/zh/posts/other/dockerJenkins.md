@@ -48,4 +48,104 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 请注意，虚拟内存可以帮助您在内存资源紧张时保持系统的稳定性，但它不应成为替代物理内存的解决方案。如果您的应用程序需要更多内存来运行，最好考虑升级服务器的物理内存，这将是提高性能的更可靠方法。
 :::
 
-实验成功后，记录结果，后续更新。
+## 相关命令
+
+```bash
+# 实时查看内存使用情况
+top
+# 停止正在使用的swap分区
+swapoff /swapfile
+# 删除swap分区文件
+rm -rf /swapfile
+# 删除或注释掉我们之前在fstab文件里追加的开机自动挂载配置内容
+vim    /etc/fstab
+#把下面内容删除
+/swapfile   swap  swap  defaults  0  0
+```
+
+## 结果
+添加虚拟内存后，确实解决了服务器宕机问题，但是又出现了一个新的问题，**打包时内存溢出**。为了解决这个问题，我也ChatGPT了许多答案，都没有解决我的问题，能彻底解决我的问题只有升级配置。 
+报错信息如下
+```
+<--- Last few GCs --->
+
+[7472:0x70481c0]    56063 ms: Scavenge (reduce) 981.0 (1005.2) -> 980.2 (1005.4) MB, 2.2 / 0.0 ms  (average mu = 0.201, current mu = 0.003) allocation failure; 
+[7472:0x70481c0]    56929 ms: Mark-sweep (reduce) 981.2 (1005.4) -> 979.8 (1005.4) MB, 863.8 / 0.0 ms  (average mu = 0.218, current mu = 0.237) allocation failure; scavenge might not succeed
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+ 1: 0xb83f50 node::Abort() [node]
+ 2: 0xa94834  [node]
+ 3: 0xd647c0 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [node]
+ 4: 0xd64b67 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [node]
+ 5: 0xf42265  [node]
+ 6: 0xf43168 v8::internal::Heap::RecomputeLimits(v8::internal::GarbageCollector) [node]
+ 7: 0xf53673  [node]
+ 8: 0xf544e8 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [node]
+ 9: 0xf2ee4e v8::internal::HeapAllocator::AllocateRawWithLightRetrySlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [node]
+10: 0xf30217 v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [node]
+11: 0xf10760 v8::internal::Factory::AllocateRaw(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [node]
+12: 0xf07d2c v8::internal::FactoryBase<v8::internal::Factory>::AllocateRawArray(int, v8::internal::AllocationType) [node]
+13: 0xf07ea5 v8::internal::FactoryBase<v8::internal::Factory>::NewFixedArrayWithFiller(v8::internal::Handle<v8::internal::Map>, int, v8::internal::Handle<v8::internal::Oddball>, v8::internal::AllocationType) [node]
+14: 0x11ba933 v8::internal::Handle<v8::internal::NameDictionary> v8::internal::HashTable<v8::internal::NameDictionary, v8::internal::NameDictionaryShape>::NewInternal<v8::internal::Isolate>(v8::internal::Isolate*, int, v8::internal::AllocationType) [node]
+15: 0x11ba9d9 v8::internal::Handle<v8::internal::NameDictionary> v8::internal::BaseNameDictionary<v8::internal::NameDictionary, v8::internal::NameDictionaryShape>::New<v8::internal::Isolate>(v8::internal::Isolate*, int, v8::internal::AllocationType, v8::internal::MinimumCapacity) [node]
+16: 0xf1b838 v8::internal::Factory::NewSlowJSObjectFromMap(v8::internal::Handle<v8::internal::Map>, int, v8::internal::AllocationType, v8::internal::Handle<v8::internal::AllocationSite>) [node]
+17: 0x1146014 v8::internal::JSObject::ObjectCreate(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>) [node]
+18: 0x12e026b v8::internal::Runtime_ObjectCreate(int, unsigned long*, v8::internal::Isolate*) [node]
+19: 0x17035b9  [node]
+Aborted (core dumped)
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
+```
+这个报错信息跟JavaScript环境中的垃圾回收（GC）有关。GC是JavaScript引擎通过识别和删除不再使用的对象来释放内存的过程。
+
+垃圾回收（GC）是JavaScript运行时环境中的一个关键概念，用于管理内存分配和释放。JavaScript是一种高级编程语言，它自动处理内存分配和释放，以减轻开发人员的负担。下面是关于JavaScript环境中的垃圾回收的一些重要信息：
+
+1. **自动内存管理**：JavaScript具有自动内存管理功能，这意味着开发人员不需要手动分配或释放内存。垃圾回收器负责跟踪和释放不再使用的内存。
+
+2. **标记-清除算法**：JavaScript中最常用的垃圾回收算法是标记-清除（Mark and Sweep）算法。该算法分为两个主要阶段：
+   - **标记（Marking）**：在此阶段，垃圾回收器标记所有仍然在使用中的对象。它从根对象（通常是全局对象或执行上下文中的变量）开始遍历，标记可以从根对象访问到的所有对象。
+   - **清除（Sweeping）**：在此阶段，垃圾回收器清除（释放）未被标记的对象的内存。这些对象不再可访问，因此它们被认为是垃圾。
+
+3. **内存泄漏**：虽然JavaScript有垃圾回收器，但仍然可能发生内存泄漏。内存泄漏是指程序中的对象占用内存，但永远不会被垃圾回收器清除。这通常发生在开发人员忘记释放对对象的引用时，或者对象之间存在循环引用。
+
+4. **性能影响**：垃圾回收会影响性能，因为它需要时间来执行。在大型应用程序中，不合理的内存管理可能导致频繁的垃圾回收，从而降低性能。因此，开发人员应该努力避免内存泄漏和减少不必要的对象分配。
+
+5. **手动内存管理**：在一些特殊情况下，开发人员可以使用`delete`操作符手动释放对象引用，但这在现代JavaScript中并不常见。现代的JavaScript引擎在大多数情况下能够高效地处理内存管理。
+
+6. **优化垃圾回收**：一些JavaScript引擎（例如V8引擎）在执行上采用了增量垃圾回收，以减少暂停时间。这意味着它们会尝试在后台进行垃圾回收，而不会阻塞主线程的执行。
+
+总之，垃圾回收是JavaScript中的一个关键概念，它有助于自动管理内存，但开发人员仍然需要理解它的原理以避免内存泄漏并优化性能。
+
+## 打包内存溢出解决方案
+这是符合我自身问题解决方案，仅供参考，如有更好的解决方案，可以在下方评论指出。 
+百度了许多答案以及ChatGPT都有提到添加 **NODE_OPTIONS 环境变量** ，又因为我的项目的打包工具是`vite`，而且框架还封装了一层，加上我还是个新手，不知道从哪里去设置 **NODE_OPTIONS**，所以最后想到的办法就是使用别人的插件去处理这个。 
+### 使用cross-env插件
+这个插件能解决我打包时内存溢出的问题
+1. 安装cross-env
+``` bash
+npm install -g cross-env
+```
+2. 修改package.json打包命令
+将package.json中的build语句前面增加一句`cross-env NODE_OPTIONS=--max_old_sapce_size=8192`,配置多大视自身情况而定。  
+但由于这个问题只在我的**垃圾服务器**上打包才会出现，本地环境并不会有这些问题，所以只能通过脚本去添加或修改才比较合适。所以我加了一个脚本去替换我要修改的内容
+```bash
+#!/bin/bash
+
+# 设置要替换的目标文本和替换文本
+target_text="旧的文本"
+replace_text="新的文本"
+
+# 设置要处理的文件路径
+file_path="/path/to/your/file.txt"
+
+# 使用sed命令替换文件中的文本
+sed -i "s/$target_text/$replace_text/g" "$file_path"
+
+echo "文件内容替换完成。"
+```
+
+## 最后
+成功打包，jenkins上构建了将近50次才成功，攻克这个问题后，后面就是将打包文件打包到对应文件夹就算是成功了。就能实现提交代码后，自动构建打包部署一条龙了。:speech_balloon: :fallen_leaf: :maple_leaf:
