@@ -26,13 +26,4 @@ export const clothesData = [
         hOffset: 0,
         vOffset: -80,
     },
-    {
-        id: 3,
-        image: '/assets/clothes/Tia.PNG',
-        jsonPath: '/kanban/Potion-Maker/Tia/index.json',
-        width: 100,
-        height: 250,
-        hOffset: 0,
-        vOffset: -120,
-    }
 ]
