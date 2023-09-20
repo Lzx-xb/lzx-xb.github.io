@@ -72,6 +72,13 @@ export const enSidebar = sidebar({
           prefix: "kaogong/",
           collapsible: true,
           children: "structure",
+        },
+        {
+          text: "公共基础知识",
+          icon: "repo",
+          prefix: "common/",
+          collapsible: true,
+          children: "structure",
         }
       ]
     },
