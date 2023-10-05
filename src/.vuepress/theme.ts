@@ -23,6 +23,7 @@ export default hopeTheme({
   blog: {
     medias: {
       Github: "https://github.com/Lzx-xb/lzx-xb.github.io",
+      Gitee: "https://gitee.com/wslzx/lzx-xb.github.io"
     },
   },
 
