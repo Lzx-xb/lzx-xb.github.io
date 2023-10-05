@@ -18,8 +18,8 @@ footer: docker jenkins
 :::
 
 ## 解决方案
-1. 升级配置,价格翻倍（不想）
-2. 添加虚拟内存(来自ChatGPT)
+1. 升级配置,价格翻倍
+2. 添加虚拟内存(ChatGPT)
 
 ## 添加虚拟内存方法
 
@@ -120,20 +120,15 @@ Finished: FAILURE
 总之，垃圾回收是JavaScript中的一个关键概念，它有助于自动管理内存，但开发人员仍然需要理解它的原理以避免内存泄漏并优化性能。
 
 ## 打包内存溢出解决方案
-这是符合我自身问题解决方案，仅供参考，如有更好的解决方案，可以在下方评论指出。 
-百度了许多答案以及ChatGPT都有提到添加 **NODE_OPTIONS 环境变量** ，又因为我的项目的打包工具是`vite`，而且框架还封装了一层，加上我还是个新手，不知道从哪里去设置 **NODE_OPTIONS**，所以最后想到的办法就是使用别人的插件去处理这个。 
-### 使用cross-env插件
-这个插件能解决我打包时内存溢出的问题
-1. 安装cross-env
-``` bash
-npm install -g cross-env
+[**官方问题链接**][1]
+```bash
+npm i vuepress@next vuepress-theme-hope@latest -E
+npx vp-update
+# 一开始打算配置node_options，但发现更新框架，能解决这个问题。仅适用使用vuepress-theme-hope框架。
 ```
-2. 修改package.json打包命令
-将package.json中的build语句前面增加一句`cross-env NODE_OPTIONS=--max_old_sapce_size=8192`,配置多大视自身情况而定。  
-但由于这个问题只在我的**垃圾服务器**上打包才会出现，本地环境并不会有这些问题，所以只能通过脚本去添加或修改才比较合适。所以我加了一个脚本去替换我要修改的内容
+
 ```bash
 #!/bin/bash
-
 # 设置要替换的目标文本和替换文本
 target_text="旧的文本"
 replace_text="新的文本"
@@ -147,5 +142,8 @@ sed -i "s/$target_text/$replace_text/g" "$file_path"
 echo "文件内容替换完成。"
 ```
 
-## 最后
-成功打包，jenkins上构建了将近50次才成功，攻克这个问题后，后面就是将打包文件打包到对应文件夹就算是成功了。就能实现提交代码后，自动构建打包部署一条龙了。:speech_balloon: :fallen_leaf: :maple_leaf:
+::: tip
+当target_text中含有空格，则可以使用`[[:space:]]`特殊符号来转义。:speech_balloon: :fallen_leaf: :maple_leaf:
+:::
+
+[1]:https://vuepress-theme-hope.github.io/v2/zh/faq/common-error.html#usexxx-is-called-without-provider
