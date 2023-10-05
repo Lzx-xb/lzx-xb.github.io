@@ -3,7 +3,7 @@ title: 添加ssh公钥
 date: 2023-10-05
 icon: discover
 category:
-  - github
+  - git
 tag:
   - ssh
 footer: 添加ssh公钥
