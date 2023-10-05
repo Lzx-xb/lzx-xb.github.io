@@ -48,4 +48,4 @@ footer: 添加ssh公钥
 
    - 最后，点击 "Add SSH key"（添加 SSH 密钥）按钮。
 
-   GitHub 现在应该已经将您的 SSH 公钥添加到您的帐户中。您可以使用 SSH 密钥与 GitHub 通信，而无需每次都输入用户名和密码。确保在使用 Git 命令或在 Jenkins 等自动化构建工具中配置 SSH 以访问 GitHub 时，使用正确的 SSH 密钥。在`gitee` 上也是同理。
+   GitHub 现在应该已经将您的 SSH 公钥添加到您的帐户中。您可以使用 SSH 密钥与 GitHub 通信，而无需每次都输入用户名和密码。确保在使用 Git 命令或在 Jenkins 等自动化构建工具中配置 SSH 以访问 GitHub 时，使用正确的 SSH 密钥。在`gitee` 上也是同理
