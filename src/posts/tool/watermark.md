@@ -1,10 +1,9 @@
 ---
-icon: edit
+icon: tag
 date: 2022-12-10
 title: Watermark
 category:
   - 实用工具
-  - Tool
 tag:
   - watermark
 ---

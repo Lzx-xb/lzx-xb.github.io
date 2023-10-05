@@ -1,5 +1,5 @@
 ---
-icon: edit
+icon: tag
 date: 2023-02-14
 title: vue3_watchEffect
 category:

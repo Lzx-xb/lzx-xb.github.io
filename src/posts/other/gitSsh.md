@@ -1,7 +1,7 @@
 ---
 title: 添加ssh公钥
 date: 2023-10-05
-icon: discover
+icon: tag
 category:
   - git
 tag:
@@ -12,7 +12,7 @@ footer: 添加ssh公钥
 
 要将 SSH 公钥添加到您的 GitHub 帐户中，您可以按照以下步骤操作：
 
-1. **生成 SSH 密钥对：**
+## 生成 SSH 密钥对
 
    如果您尚未生成 SSH 密钥对，请在终端中运行以下命令（确保您已登录到正确的用户帐户中）：
 
@@ -22,7 +22,7 @@ footer: 添加ssh公钥
 
    在这个命令中，`your_email@example.com` 应该替换为您在 GitHub 帐户中使用的电子邮件地址。命令执行后，您可以选择保存密钥对的位置和设置密码。
 
-2. **查看 SSH 公钥：**
+## 查看 SSH 公钥
 
    运行以下命令来查看您生成的 SSH 公钥：
 
@@ -32,7 +32,7 @@ footer: 添加ssh公钥
 
    这将显示您的 SSH 公钥内容。
 
-3. **将 SSH 公钥添加到 GitHub 帐户：**
+3. 将 SSH 公钥添加到 GitHub 帐户
 
    - 登录到您的 GitHub 帐户。
 

@@ -1,7 +1,7 @@
 ---
 title: jenkins构建问题
 date: 2023-09-13
-icon: discover
+icon: tag
 category:
   - 部署
 tag:

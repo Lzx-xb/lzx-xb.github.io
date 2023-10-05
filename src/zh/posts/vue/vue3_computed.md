@@ -1,5 +1,5 @@
 ---
-icon: edit
+icon: tag
 date: 2023-02-14
 title: vue3_computed计算属性
 category:

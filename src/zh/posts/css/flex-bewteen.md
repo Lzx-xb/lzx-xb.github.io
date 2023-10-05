@@ -5,7 +5,6 @@ pure: true
 category:
   - CSS
 tag:
-  - flex-bewteen
   - 左对齐
 ---
 

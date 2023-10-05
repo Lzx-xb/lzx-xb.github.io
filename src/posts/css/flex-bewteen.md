@@ -1,11 +1,10 @@
 ---
-icon: edit
+icon: tag
 date: 2022-12-10
 pure: true
 category:
   - CSS
 tag:
-  - flex-bewteen
   - 左对齐
 ---
 

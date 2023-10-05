@@ -1,12 +1,10 @@
 ---
-icon: edit
+icon: tag
 date: 2022-12-10
 title: 水印效果
 category:
   - 实用工具
-  - Tool
 tag:
-  - 水印效果
   - watermark
 ---
 

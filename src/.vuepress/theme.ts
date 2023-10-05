@@ -16,9 +16,9 @@ export default hopeTheme({
 
   logo: "/logo.svg",
 
-  repo: "/",
+  repo: "https://github.com/Lzx-xb/lzx-xb.github.io",
 
-  docsDir: "docs",
+  docsDir: "src",
 
   blog: {
     medias: {

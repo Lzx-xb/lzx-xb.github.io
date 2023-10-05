@@ -1,13 +1,11 @@
 ---
 title: Math()
-icon: edit
+icon: tag
 date: 2023-02-08
 category:
-  - Math
+  - javascript
 tag:
     - Math
-    - javascript
-    - js
 ---
 
 # JavaScript中的算术

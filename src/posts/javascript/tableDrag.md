@@ -1,11 +1,11 @@
 ---
 title: Table Drag
-icon: edit
+icon: tag
 date: 2023-03-21
 category:
-  - table
+  - javascript
 tag:
-    - 原生js
+    - 表格
 ---
 
 ::: info 概述

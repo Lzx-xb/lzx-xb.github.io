@@ -3,9 +3,9 @@ title: 表格拖拽功能
 icon: edit
 date: 2023-03-21
 category:
-  - table
+  - javascript
 tag:
-    - 原生js
+    - 表格
 ---
 
 ::: info 概述

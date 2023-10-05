@@ -1,12 +1,10 @@
 ---
 title: 文本省略符
-icon: edit
+icon: tag
 date: 2022-12-10
 category:
   - CSS
 tag:
-    - clamp
-    - css
     - 文本省略符
 ---
 

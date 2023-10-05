@@ -3,11 +3,9 @@ title: Math()算术
 icon: edit
 date: 2023-02-08
 category:
-  - Math
+  - javascript
 tag:
     - Math
-    - javascript
-    - js
 ---
 
 # JavaScript中的算术

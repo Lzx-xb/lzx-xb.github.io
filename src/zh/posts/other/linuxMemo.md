@@ -1,7 +1,7 @@
 ---
 title: Linux备忘手册
 date: 2023-02-22
-icon: discover
+icon: tag
 category:
   - Other
 tag:
