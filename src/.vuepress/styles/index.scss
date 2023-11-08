@@ -1,4 +1,15 @@
 // place your custom styles here
+@import "./palette.scss";
+// 脚页样式
+.footer_icp {
+    font-size: 13px;
+    color: #666666;
+}
+
+.footer_icp:hover{
+    color: $theme-color;
+}
+
 .echarts-wrapper {
     min-height: 400px;
     height: 650px;

@@ -25,6 +25,5 @@ projects:
     desc: Collect interview questions and reference answers asked during the interview
     link: https://lzx-xb.github.io/blog/interview/
 
-footer: Enjoy the snow in the wind, flowers in the fog, and swing happily
 ---
 

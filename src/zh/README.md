@@ -19,6 +19,5 @@ projects:
     desc: 收集面试过程中被问到的面试题以及参考答案
     link: https://lzx-xb.github.io/blog/interview/
 
-footer: 风中赏雪，雾里赏花，快乐回旋
 ---
 

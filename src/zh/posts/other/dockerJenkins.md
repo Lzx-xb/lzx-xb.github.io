@@ -6,7 +6,6 @@ category:
   - 部署
 tag:
   - jenkins
-footer: docker jenkins
 ---
 
 ## 部署问题

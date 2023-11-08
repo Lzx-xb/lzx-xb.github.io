@@ -6,7 +6,6 @@ category:
   - git
 tag:
   - ssh
-footer: 添加ssh公钥
 ---
 
 

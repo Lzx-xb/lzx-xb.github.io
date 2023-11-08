@@ -6,7 +6,6 @@ category:
   - Other
 tag:
   - linux
-footer: 页脚
 ---
 
 ## 关机/重启/注销

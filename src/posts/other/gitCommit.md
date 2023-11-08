@@ -6,7 +6,6 @@ category:
   - git
 tag:
   - commit
-footer: 同步提交代码
 ---
 
 要一次性将代码同步提交到 GitHub 和 Gitee 仓库，您可以按照以下步骤操作：
