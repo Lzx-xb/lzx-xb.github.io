@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-99186e22","path":"/zh/posts/civil/shiye/","title":"Shiye","lang":"en-US","frontmatter":{"title":"Shiye","article":false,"feed":false,"sitemap":false,"seo":false,"head":[]},"headers":[],"git":{},"readingTime":{"minutes":0,"words":1},"filePathRelative":null}');export{e as data};
