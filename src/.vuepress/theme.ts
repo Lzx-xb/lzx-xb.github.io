@@ -76,10 +76,10 @@ export default hopeTheme({
   },
 
   encrypt: {
-    config: {
-      "/posts/civil/": ["709394"],
-      "/zh/posts/civil/": ["709394"]
-    },
+    // config: {
+    //   "/posts/civil/": ["709394"],
+    //   "/zh/posts/civil/": ["709394"]
+    // },
   },
 
   plugins: {
