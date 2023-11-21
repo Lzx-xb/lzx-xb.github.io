@@ -1,14 +1,20 @@
 // place your custom styles here
 @import "./palette.scss";
-// 脚页样式
+// -----脚页样式-----
 .footer_icp {
     font-size: 13px;
     color: #666666;
+    font-weight: normal;
+}
+
+.vp-footer-wrapper{
+    justify-content: center;
 }
 
 .footer_icp:hover{
     color: $theme-color;
 }
+// -----脚页样式-----
 
 .echarts-wrapper {
     min-height: 400px;

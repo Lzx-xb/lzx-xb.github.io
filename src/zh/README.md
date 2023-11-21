@@ -5,7 +5,7 @@ icon: home
 title: 博客主页
 heroImage: /logo.svg
 heroText: 漫步人生路
-bgImage: "https://lzx-xb.github.io/bgwallhaven.png"
+bgImage: "https://liuyuedeyu.top/bgwallhaven.png"
 heroFullScreen: true
 tagline: 目标推远，让理想永远在前面
 projects:

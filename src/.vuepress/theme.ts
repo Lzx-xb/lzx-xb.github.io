@@ -9,7 +9,7 @@ export default hopeTheme({
   fullscreen: true,
   author: {
     name: "漫步人生路",
-    url: "https://lzx-xb.github.io/",
+    url: "https://liuyuedeyu.top",
   },
 
   iconAssets: "iconfont",
