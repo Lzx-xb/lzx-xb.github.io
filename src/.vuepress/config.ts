@@ -73,7 +73,7 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "en-US",
-      title: "个人知识储备库",
+      title: "漫步人生路",
       description: "A blog for 漫步人生路",
       // head: [
       //   ["link", { rel: "stylesheet", href: "/css/style.css" }],
@@ -93,7 +93,7 @@ export default defineUserConfig({
     },
     "/zh/": {
       lang: "zh-CN",
-      title: "个人知识储备库",
+      title: "漫步人生路",
       description: "漫步人生路的博客",
       // head: [
       //   ["link", { rel: "stylesheet", href: "/css/style.css" }],
