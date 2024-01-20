@@ -21,7 +21,7 @@ export default {
             scale: 0.4,
             imgX: 0,
             imgY: 0,
-            img: new Image(),
+            img: null,
             canvas: null,
             pc: true,
         }
@@ -45,6 +45,7 @@ export default {
 
             let initialDistance = 0;
             let initialScale = 1;
+            this.img = new Image();
             this.img.src = '/bgwallhaven.png';
 
             this.img.onload = function () {
