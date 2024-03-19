@@ -8,6 +8,8 @@ tag:
   - economy
 ---
 
+# 经济
+
 ```mindmap 
 root((商品经济理论))
   商品
