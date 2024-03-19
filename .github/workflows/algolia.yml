@@ -24,3 +24,4 @@ jobs:
           algolia_application_id: ${{ secrets.ALGOLIA_APPLICATION_ID }}
           # needs to be inside $GITHUB_WORKSPACE from actions/checkout step
           file: algolia-config.json
+          disabled: false
