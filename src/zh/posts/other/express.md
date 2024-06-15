@@ -11,7 +11,7 @@ tag:
 # express框架使用
 
 ## express创建
-[官网][https://www.expressjs.com.cn/starter/installing.html]
+[**官方问题链接**][1]
 ```bash
 npm install express --save
 ```
@@ -114,11 +114,54 @@ docker run -d -p 3000:3000 my-express-app
 上述命令中的 -d 表示后台运行容器，-p 3000:3000 表示将容器的 3000 端口映射到主机的 3000 端口。
 
 
+## 创建mysql docker-compose.yml
+```bash
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: my_root_pwd
+      MYSQL_DATABASE: my_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user_pwd
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
+```
+
+## sql 初始化脚本
+```sql
+CREATE TABLE student (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL COMMENT '学生姓名',
+    age INT COMMENT '学生年龄',
+    gender ENUM('male', 'female') COMMENT '学生性别',
+    address VARCHAR(255) COMMENT '学生地址',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'
+) COMMENT '学生信息表';
+
+INSERT INTO student (name, age, gender, address, created_at)
+VALUES ('李四', 22, 'female', '上海市浦东新区', NOW());
+```
+
+
+
+
 ## 总结
 后续改进
 1、封装数据库连接方法
 2、前后端分离，express只负责接口，不需要再express引入前端模板
 3、.env 环境优化
+
+[1]:https://www.expressjs.com.cn/starter/installing.html
 
 
 
