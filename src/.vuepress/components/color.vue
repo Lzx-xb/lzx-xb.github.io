@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <div v-for="item in colorList" class="card" :style="{ backgroundColor: item.hex }">
+    <div class="color-container">
+        <div v-for="item in colorList" class="color-card" :style="{ backgroundColor: item.hex }">
             <h2 class="title">{{ item.name }}</h2>
             <div class="copy">
                 <span>{{ item.rgb }}</span>
@@ -123,7 +123,7 @@ export default {
 
 
 <style>
-.container {
+.color-container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -131,7 +131,7 @@ export default {
     flex-wrap: wrap;
 }
 
-.card {
+.color-card {
     margin: 1vw;
     padding: 10px;
     width: 200px;
